@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- iojs
+sudo: false
+cache:
+  directories:
+  - node_modules
+notifications:
+  email: false
+  slack:
+    secure: U8RoCCWTJpF//cWHk/0I1asptg3rVRFehRt2qeGz42Z5VYxh0g/Yr3DQBOGDOcRpbzfOBdFK4rOm9Nh5LLYiXiOEUGuGi1ZH+p7yWNkX+kZI9JzxktZjqKBgHQO2N/aBOGuYm/eBJvbFhZryDubYVf/V736f4N3KxL19JW4LsCY=
+deploy:
+  provider: npm
+  email: david@excellenteasy.com
+  skip_cleanup: true
+  on:
+    branch: master
+    repo: excellenteasy/android-icons
+  api_key:
+    secure: Ad3fh52neMPTDdft52/vLt9dkhvNKE2PZw3hpnh7SzXdg+GObqj4dnU0qN9pkma66dgBLyyzCjDY6S0Kzz+wZ46emu6jXd7I/zwY6D3mfHfoMOd2vVM366W+fmfYwp0YVDfScs6DYiBYcz7P9JA+riQQUfsXF9aiW7IRgDiPOwA=
+env:
+  global:
+    secure: F3YYiOKoWR7zd5WF1HL/2YR6dqiXP6dLreaf5+crIV2MUpal0hm11/9Ub5ldlEMosQ3yndo3dIqzEQIK/IiaDX3rpajbfU3aEQs5Yt86TzeobZ7TjaRHthZzTmw5WxGmyM7Rd7yeJBiYRzItiwldrB4aRJYmcJQtC+tyWlVqSKA=

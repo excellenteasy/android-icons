@@ -1,0 +1,16 @@
+[{
+  "name": "mdpi.png",
+  "width": 48
+}, {
+  "name": "hdpi.png",
+  "width": 72
+}, {
+  "name": "xhdpi.png",
+  "width": 96
+}, {
+  "name": "xxhdpi.png",
+  "width": 144
+}, {
+  "name": "xxxhdpi.png",
+  "width": 192
+}]
