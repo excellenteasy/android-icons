@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-- iojs
+- iojs-v1
+- "0.12"
+- "0.10"
 sudo: false
 cache:
   directories:
@@ -9,6 +11,23 @@ notifications:
   email: false
   slack:
     secure: U8RoCCWTJpF//cWHk/0I1asptg3rVRFehRt2qeGz42Z5VYxh0g/Yr3DQBOGDOcRpbzfOBdFK4rOm9Nh5LLYiXiOEUGuGi1ZH+p7yWNkX+kZI9JzxktZjqKBgHQO2N/aBOGuYm/eBJvbFhZryDubYVf/V736f4N3KxL19JW4LsCY=
+before_install:
+- npm i -g npm@^2.0.0
+- npm prune
+install:
+- npm install --node-gyp=$(which pangyp)
+before_script:
+- curl -Lo travis_after_all.py https://raw.github.com/dmakhno/travis_after_all/master/travis_after_all.py
+after_success:
+- python travis_after_all.py
+- export $(cat .to_export_back)
+after_failure:
+- python travis_after_all.py
+- export $(cat .to_export_back)
+before_deploy:
+- rm -f travis_after_all.py .to_export_back
+after_script:
+- echo leader=$BUILD_LEADER status=$BUILD_AGGREGATE_STATUS
 deploy:
   provider: npm
   email: david@excellenteasy.com
