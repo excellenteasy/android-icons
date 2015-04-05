@@ -1,6 +1,7 @@
 'use strict'
 var test = require('tape')
 var androidIcons = require('./')
+var exec = require('child_process').exec
 
 test('returns all icons in array', function (t) {
   t.plan(2)
@@ -35,4 +36,88 @@ test('returns icon for size xhdpi', function (t) {
   var icon = androidIcons({size: 'xhdpi'})
   t.ok(icon.name === 'xhdpi.png', 'icon name correct')
   t.ok(icon.width === 96, 'icon width correct')
+})
+
+test('cli returns all icons as csv', function (t) {
+  t.plan(1)
+  var expected = [
+    'mdpi.png,48',
+    'hdpi.png,72',
+    'xhdpi.png,96',
+    'xxhdpi.png,144',
+    'xxxhdpi.png,192\n'
+  ].join('\n')
+  exec('./bin/android-icons.js', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
+})
+
+test('cli returns icon for size', function (t) {
+  t.plan(1)
+  var expected = 'hdpi.png,72\n'
+  exec('./bin/android-icons.js --size 72', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
+})
+
+test('cli returns icon for size', function (t) {
+  t.plan(1)
+  var expected = 'xhdpi.png,96\n'
+  exec('./bin/android-icons.js --size xhdpi', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
+})
+
+test('cli returns all icons as csv', function (t) {
+  t.plan(1)
+  var expected = [
+    'mdpi.png,48',
+    'hdpi.png,72',
+    'xhdpi.png,96',
+    'xxhdpi.png,144',
+    'xxxhdpi.png,192\n'
+  ].join('\n')
+  exec('./bin/android-icons.js', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
+})
+
+test('cli returns icon for size', function (t) {
+  t.plan(1)
+  var expected = 'hdpi.png,72\n'
+  exec('./bin/android-icons.js --size 72', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
+})
+
+test('cli returns icon for size xhdpi', function (t) {
+  t.plan(1)
+  var expected = 'xhdpi.png,96\n'
+  exec('./bin/android-icons.js --size xhdpi', function (error, stdout, stderr) {
+    var err = error || stderr
+    if (err) {
+      return t.fail('calling cli produced an error: ' + err)
+    }
+    t.equal(stdout, expected, 'cli returned expected output')
+  })
 })
