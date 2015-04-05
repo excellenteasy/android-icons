@@ -1,8 +1,8 @@
 language: node_js
 node_js:
 - iojs-v1
-- "0.12"
-- "0.10"
+- '0.12'
+- '0.10'
 sudo: false
 cache:
   directories:
@@ -36,7 +36,7 @@ deploy:
     branch: master
     repo: excellenteasy/android-icons
   api_key:
-    secure: Ad3fh52neMPTDdft52/vLt9dkhvNKE2PZw3hpnh7SzXdg+GObqj4dnU0qN9pkma66dgBLyyzCjDY6S0Kzz+wZ46emu6jXd7I/zwY6D3mfHfoMOd2vVM366W+fmfYwp0YVDfScs6DYiBYcz7P9JA+riQQUfsXF9aiW7IRgDiPOwA=
+    secure: VAuhQ3rnfR4OBv809ez01wll6tORbQ3oVy+2EpiDZNPp6MldK53ZpBHOHHE5dy4A8UhodRSzUf8G0mOMH4Y+akiSTMu8jXFEoEz6NGgksNAgdbXlyITlQnjrv5BHGSohraLHmrlFmOOh3mAZ1CihL2lmJN2SAr5k3zA6mWCpovM=
 env:
   global:
     secure: F3YYiOKoWR7zd5WF1HL/2YR6dqiXP6dLreaf5+crIV2MUpal0hm11/9Ub5ldlEMosQ3yndo3dIqzEQIK/IiaDX3rpajbfU3aEQs5Yt86TzeobZ7TjaRHthZzTmw5WxGmyM7Rd7yeJBiYRzItiwldrB4aRJYmcJQtC+tyWlVqSKA=
