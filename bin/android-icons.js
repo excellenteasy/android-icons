@@ -1,28 +1,38 @@
 #!/usr/bin/env node
 'use strict'
 var abbrev = require('abbrev')
-var argv = require('minimist')(process.argv.slice(2), abbrev('help', 'version', 'size', 'format'))
-var pkg = require('../package.json')
+var argv = require('yargs')
 var icons = require('../')
 
-function help () {
-  console.log([
-    pkg.description,
-    '',
-    'Use `--format json` to set output to JSON.',
-    'Get specifc icon by size or name by using `--size`.',
-    '',
-    'Examples:',
-    '  $ android-icons --size 48',
-    '  mdpi.png,48',
-    '',
-    '  $ android-icons --size 48 --format json',
-    '  {"name":"mdpi.png","width":48}',
-    '',
-    '  $ android-icons --size xhdpi',
-    '  xhdpi.png,96'
-  ].join('\n'))
-}
+// help
+argv.help('help')
+argv.alias('h', 'help')
+
+// register abbreviated aliases
+var abbrevs = abbrev(['help', 'size', 'format'])
+var aliases = Object.keys(abbrevs)
+aliases.forEach(function (alias) {
+  if (alias !== abbrevs[alias]) {
+    argv.alias(alias, abbrevs[alias])
+  }
+})
+
+// document options
+argv.option('size', {
+  description: 'number of pixels (width) or string identifiying the icon image'
+})
+argv.option('format', {
+  description: 'format of the output to stdout (csv or json)'
+})
+
+// will show up in help
+argv.usage('Usage: android-icons [options]')
+
+argv.example('$ android-icons --size 48', 'mdpi.png,48')
+argv.example('$ android-icons --size 48 --format json', '{"name":"mdpi.png","width":48}')
+argv.example('$ android-icons --size xhdpi', 'xhdpi.png,96')
+
+argv = argv.argv
 
 function formatLog (icons, argv) {
   var format = (argv.format || 'csv').toLowerCase()
@@ -38,12 +48,8 @@ function formatLog (icons, argv) {
 }
 
 function cli () {
-  if (argv.help) return help()
-
-  if (argv.version) return console.log(pkg.version)
-
   var options = {
-    size: argv.size || argv.s
+    size: argv.size
   }
 
   var output = icons(options)
