@@ -35,6 +35,7 @@ deploy:
   on:
     branch: master
     repo: excellenteasy/android-icons
+    condition: "$BUILD_LEADER$BUILD_AGGREGATE_STATUS = YESothers_succeeded"
   api_key:
     secure: VAuhQ3rnfR4OBv809ez01wll6tORbQ3oVy+2EpiDZNPp6MldK53ZpBHOHHE5dy4A8UhodRSzUf8G0mOMH4Y+akiSTMu8jXFEoEz6NGgksNAgdbXlyITlQnjrv5BHGSohraLHmrlFmOOh3mAZ1CihL2lmJN2SAr5k3zA6mWCpovM=
 env:
