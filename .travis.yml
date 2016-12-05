@@ -1,43 +1,17 @@
 language: node_js
-node_js:
-- iojs-v1
-- '0.12'
-- '0.10'
-sudo: false
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
-  slack:
-    secure: U8RoCCWTJpF//cWHk/0I1asptg3rVRFehRt2qeGz42Z5VYxh0g/Yr3DQBOGDOcRpbzfOBdFK4rOm9Nh5LLYiXiOEUGuGi1ZH+p7yWNkX+kZI9JzxktZjqKBgHQO2N/aBOGuYm/eBJvbFhZryDubYVf/V736f4N3KxL19JW4LsCY=
-before_install:
-- npm i -g npm@^2.0.0
-- npm prune
-install:
-- npm install --node-gyp=$(which pangyp)
+node_js:
+  - '7'
+  - '6'
+  - '4'
 before_script:
-- curl -Lo travis_after_all.py https://raw.github.com/dmakhno/travis_after_all/master/travis_after_all.py
+  - npm prune
 after_success:
-- python travis_after_all.py
-- export $(cat .to_export_back)
-after_failure:
-- python travis_after_all.py
-- export $(cat .to_export_back)
-before_deploy:
-- rm -f travis_after_all.py .to_export_back
-after_script:
-- echo leader=$BUILD_LEADER status=$BUILD_AGGREGATE_STATUS
-deploy:
-  provider: npm
-  email: david@excellenteasy.com
-  skip_cleanup: true
-  on:
-    branch: master
-    repo: excellenteasy/android-icons
-    condition: "$BUILD_LEADER$BUILD_AGGREGATE_STATUS = YESothers_succeeded"
-  api_key:
-    secure: VAuhQ3rnfR4OBv809ez01wll6tORbQ3oVy+2EpiDZNPp6MldK53ZpBHOHHE5dy4A8UhodRSzUf8G0mOMH4Y+akiSTMu8jXFEoEz6NGgksNAgdbXlyITlQnjrv5BHGSohraLHmrlFmOOh3mAZ1CihL2lmJN2SAr5k3zA6mWCpovM=
-env:
-  global:
-    secure: F3YYiOKoWR7zd5WF1HL/2YR6dqiXP6dLreaf5+crIV2MUpal0hm11/9Ub5ldlEMosQ3yndo3dIqzEQIK/IiaDX3rpajbfU3aEQs5Yt86TzeobZ7TjaRHthZzTmw5WxGmyM7Rd7yeJBiYRzItiwldrB4aRJYmcJQtC+tyWlVqSKA=
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
