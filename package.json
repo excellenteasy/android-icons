@@ -6,17 +6,16 @@
   "bin": "./bin/android-icons.js",
   "dependencies": {
     "abbrev": "^1.0.5",
-    "yargs": "^8.0.1"
+    "yargs": "^3.7.0"
   },
   "devDependencies": {
-    "semantic-release": "^4.3.5",
-    "standard": "^10.0.0",
+    "semantic-release": "^6.3.2",
+    "standard": "^3.3.2",
     "tape": "^4.0.0"
   },
   "author": "David Pfahler <david@excellenteasy.com>",
   "engines": {
-    "iojs": "^1",
-    "node": "^0.10",
+    "node": "^4",
     "npm": "^2"
   },
   "scripts": {
