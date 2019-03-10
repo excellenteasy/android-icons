@@ -1,8 +1,8 @@
 {
   "name": "@randy.tarampi/android-icons",
-  "version": "2.1.0",
   "description": "Get android icon file names and dimensions (width)",
-  "main": "index.js",
+  "version": "2.1.0",
+  "author": "Randy Tarampi <randy.tarampi@gmail.com>",
   "bin": "./bin/android-icons.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -15,35 +15,15 @@
     "standard": "^12.0.1",
     "tape": "^4.10.1"
   },
-  "author": "Randy Tarampi <randy.tarampi@gmail.com>",
   "engines": {
     "node": "^4",
     "npm": "^2"
   },
-  "scripts": {
-    "test": "standard && node test.js"
-  },
   "files": [
-    "index.js",
     "bin/android-icons.js",
-    "icons.json"
+    "icons.json",
+    "index.js"
   ],
-  "keywords": [
-    "cli",
-    "bin",
-    "icon",
-    "android",
-    "cordova",
-    "phonegap"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/randytarampi/android-icons.git"
-  },
   "greenkeeper": {
     "commitMessages": {
       "initialBadge": "docs(greenkeeper): Add Greenkeeper badge.",
@@ -62,5 +42,22 @@
       "basicPR": "chore(greenkeeper): Update ${dependency}",
       "groupPR": "chore(greenkeeper): Update ${dependency} for ${group}"
     }
+  },
+  "keywords": [
+    "android",
+    "bin",
+    "cli",
+    "cordova",
+    "icon",
+    "phonegap"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "randytarampi/android-icons.git",
+  "scripts": {
+    "test": "standard && node test.js"
   }
 }
