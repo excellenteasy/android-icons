@@ -1,6 +1,6 @@
 {
   "name": "@randy.tarampi/android-icons",
-  "version": "0.0.0-development",
+  "version": "2.1.0",
   "description": "Get android icon file names and dimensions (width)",
   "main": "index.js",
   "bin": "./bin/android-icons.js",
