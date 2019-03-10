@@ -1,5 +1,5 @@
 {
-  "name": "android-icons",
+  "name": "@randy.tarampi/android-icons",
   "version": "0.0.0-development",
   "description": "Get android icon file names and dimensions (width)",
   "main": "index.js",
@@ -9,18 +9,19 @@
     "yargs": "^3.7.0"
   },
   "devDependencies": {
-    "semantic-release": "^6.3.2",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "semantic-release": "^15.13.3",
     "standard": "^3.3.2",
     "tape": "^4.0.0"
   },
-  "author": "David Pfahler <david@excellenteasy.com>",
+  "author": "Randy Tarampi <randy.tarampi@gmail.com>",
   "engines": {
     "node": "^4",
     "npm": "^2"
   },
   "scripts": {
-    "test": "standard && node test.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "test": "standard && node test.js"
   },
   "files": [
     "index.js",
@@ -36,8 +37,11 @@
     "phonegap"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/excellenteasy/android-icons.git"
+    "url": "https://github.com/randytarampi/android-icons.git"
   }
 }

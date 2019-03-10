@@ -13,14 +13,14 @@ This information also exists for [iOS icons](https://github.com/excellenteasy/io
 ## Install
 
 ```sh
-$ npm install --save android-icons
+$ npm install --save @randy.tarampi/android-icons
 ```
 
 
 ## Usage
 
 ```js
-var icons = require('android-icons');
+var icons = require('@randy.tarampi/android-icons');
 
 icons();
 //=> [{ "name": "mdpi.png", "width": 48 }, { "name": "hdpi.png", "width": 72 }, ... ]
@@ -60,7 +60,7 @@ icons({size: 'xhdpi'})
 > android-icons logs to stdout in comma-separated values format (csv) by default so you can easy pipe to other commands in UNIX systems.
 
 ```sh
-$ npm install --global android-icons
+$ npm install --global @randy.tarampi/android-icons
 ```
 
 ```sh
