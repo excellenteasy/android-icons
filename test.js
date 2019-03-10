@@ -7,7 +7,7 @@ test('returns all icons in array', function (t) {
   t.plan(2)
   var icons = androidIcons()
   t.ok(Array.isArray(icons), 'returned an array')
-  t.equal(icons.length, 5, '5 icons returned')
+  t.equal(icons.length, 9, '9 icons returned')
 })
 
 test('returns icon for size 48 as Number', function (t) {
@@ -45,7 +45,11 @@ test('cli returns all icons as csv', function (t) {
     'hdpi.png,72',
     'xhdpi.png,96',
     'xxhdpi.png,144',
-    'xxxhdpi.png,192\n'
+    'xxxhdpi.png,192',
+    'splash-pwa-hdpi.png,192',
+    'splash-pwa-xhdpi.png,256',
+    'splash-pwa-xxhdpi.png,384',
+    'splash-pwa-xxxhdpi.png,512\n'
   ].join('\n')
   exec('./bin/android-icons.js', function (error, stdout, stderr) {
     var err = error || stderr
@@ -56,49 +60,7 @@ test('cli returns all icons as csv', function (t) {
   })
 })
 
-test('cli returns icon for size', function (t) {
-  t.plan(1)
-  var expected = 'hdpi.png,72\n'
-  exec('./bin/android-icons.js --size 72', function (error, stdout, stderr) {
-    var err = error || stderr
-    if (err) {
-      return t.fail('calling cli produced an error: ' + err)
-    }
-    t.equal(stdout, expected, 'cli returned expected output')
-  })
-})
-
-test('cli returns icon for size', function (t) {
-  t.plan(1)
-  var expected = 'xhdpi.png,96\n'
-  exec('./bin/android-icons.js --size xhdpi', function (error, stdout, stderr) {
-    var err = error || stderr
-    if (err) {
-      return t.fail('calling cli produced an error: ' + err)
-    }
-    t.equal(stdout, expected, 'cli returned expected output')
-  })
-})
-
-test('cli returns all icons as csv', function (t) {
-  t.plan(1)
-  var expected = [
-    'mdpi.png,48',
-    'hdpi.png,72',
-    'xhdpi.png,96',
-    'xxhdpi.png,144',
-    'xxxhdpi.png,192\n'
-  ].join('\n')
-  exec('./bin/android-icons.js', function (error, stdout, stderr) {
-    var err = error || stderr
-    if (err) {
-      return t.fail('calling cli produced an error: ' + err)
-    }
-    t.equal(stdout, expected, 'cli returned expected output')
-  })
-})
-
-test('cli returns icon for size', function (t) {
+test('cli returns icon for size hdpi', function (t) {
   t.plan(1)
   var expected = 'hdpi.png,72\n'
   exec('./bin/android-icons.js --size 72', function (error, stdout, stderr) {
@@ -124,7 +86,7 @@ test('cli returns icon for size xhdpi', function (t) {
 
 test('cli returns all icons as json w/abbreviated flags', function (t) {
   t.plan(3)
-  var expected = '[{"name":"mdpi.png","width":48},{"name":"hdpi.png","width":72},{"name":"xhdpi.png","width":96},{"name":"xxhdpi.png","width":144},{"name":"xxxhdpi.png","width":192}]\n'
+  var expected = '[{"name":"mdpi.png","width":48},{"name":"hdpi.png","width":72},{"name":"xhdpi.png","width":96},{"name":"xxhdpi.png","width":144},{"name":"xxxhdpi.png","width":192},{"name":"splash-pwa-hdpi.png","width":192},{"name":"splash-pwa-xhdpi.png","width":256},{"name":"splash-pwa-xxhdpi.png","width":384},{"name":"splash-pwa-xxxhdpi.png","width":512}]\n'
   exec('./bin/android-icons.js --forma json', function (error, stdout, stderr) {
     var err = error || stderr
     if (err) {
