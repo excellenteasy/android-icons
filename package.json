@@ -6,7 +6,7 @@
   "bin": "./bin/android-icons.js",
   "dependencies": {
     "abbrev": "^1.0.5",
-    "yargs": "^3.7.0"
+    "yargs": "^15.0.2"
   },
   "devDependencies": {
     "semantic-release": "^6.3.2",
