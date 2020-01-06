@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/randytarampi/android-icons/compare/v3.0.0...v3.1.0) (2020-01-06)
+
+
+### Features
+
+* **package:** Blindly upgrade our dependencies for the new year and support node@10, node@12 and beyond. ([269473e](https://github.com/randytarampi/android-icons/commit/269473e950ee8f479a7fa2c2af0c035db7c65ca4))
+
 # [3.0.0](https://github.com/randytarampi/android-icons/compare/v2.1.0...v3.0.0) (2019-03-10)
 
 
