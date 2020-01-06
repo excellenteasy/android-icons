@@ -1,13 +1,13 @@
 # android-icons
-[![Build Status](https://travis-ci.org/excellenteasy/android-icons.svg?branch=master)](https://travis-ci.org/excellenteasy/android-icons)
-[![Dependency Status](https://david-dm.org/excellenteasy/android-icons.svg)](https://david-dm.org/excellenteasy/android-icons)
-[![devDependency Status](https://david-dm.org/excellenteasy/android-icons/dev-status.svg)](https://david-dm.org/excellenteasy/android-icons#info=devDependencies)
+[![Build Status](https://travis-ci.com/randytarampi/android-icons.svg?branch=master)](https://travis-ci.com/randytarampi/android-icons)
+[![Dependency Status](https://david-dm.org/randytarampi/android-icons.svg)](https://david-dm.org/randytarampi/android-icons)
+[![devDependency Status](https://david-dm.org/randytarampi/android-icons/dev-status.svg)](https://david-dm.org/randytarampi/android-icons#info=devDependencies)
 [![Semantically Released](https://img.shields.io/badge/versioning-semantically%20released-brightgreen.svg)](https://github.com/boennemann/semantic-release) [![Greenkeeper badge](https://badges.greenkeeper.io/randytarampi/android-icons.svg)](https://greenkeeper.io/)
 
 > Get android icon file names and dimensions (width)
 
 The default icon file names (as used by [cordova](https://cordova.apache.org/docs/en/4.0.0/config_ref_images.md.html#Icons%20and%20Splash%20Screens)) and required sizes for android are listed in a [JSON file](icons.json). This information is useful, for example, when you want to generate icons with the required sizes or to create a [`config.xml`](http://docs.phonegap.com/en/3.5.0/config_ref_images.md.html) file for a PhoneGap/Cordova project or if you just need to create the icons for your android project from one source icon.
-This information also exists for [iOS icons](https://github.com/excellenteasy/ios-icons).
+This information also exists for [iOS icons](https://github.com/randytarampi/ios-icons).
 
 
 ## Install
