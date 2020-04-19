@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/randytarampi/android-icons/compare/v3.1.0...v3.1.1) (2020-04-19)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([e9a1328](https://github.com/randytarampi/android-icons/commit/e9a1328a725a883405ae546a73494b52492055fc))
+
 # [3.1.0](https://github.com/randytarampi/android-icons/compare/v3.0.0...v3.1.0) (2020-01-06)
 
 
