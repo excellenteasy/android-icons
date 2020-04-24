@@ -11,7 +11,7 @@
   "devDependencies": {
     "semantic-release": "^6.3.2",
     "standard": "^3.3.2",
-    "tape": "^4.0.0"
+    "tape": "^5.0.0"
   },
   "author": "David Pfahler <david@excellenteasy.com>",
   "engines": {
