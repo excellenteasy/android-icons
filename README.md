@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.com/randytarampi/android-icons.svg?branch=master)](https://travis-ci.com/randytarampi/android-icons)
 [![Dependency Status](https://david-dm.org/randytarampi/android-icons.svg)](https://david-dm.org/randytarampi/android-icons)
 [![devDependency Status](https://david-dm.org/randytarampi/android-icons/dev-status.svg)](https://david-dm.org/randytarampi/android-icons#info=devDependencies)
-[![Semantically Released](https://img.shields.io/badge/versioning-semantically%20released-brightgreen.svg)](https://github.com/boennemann/semantic-release) [![Greenkeeper badge](https://badges.greenkeeper.io/randytarampi/android-icons.svg)](https://greenkeeper.io/)
+[![Semantically Released](https://img.shields.io/badge/versioning-semantically%20released-brightgreen.svg)](https://github.com/boennemann/semantic-release) 
 
 > Get android icon file names and dimensions (width)
 
