@@ -13,4 +13,16 @@
 }, {
   "name": "xxxhdpi.png",
   "width": 192
+}, {
+  "name": "splash-pwa-hdpi.png",
+  "width": 192
+}, {
+  "name": "splash-pwa-xhdpi.png",
+  "width": 256
+}, {
+  "name": "splash-pwa-xxhdpi.png",
+  "width": 384
+}, {
+  "name": "splash-pwa-xxxhdpi.png",
+  "width": 512
 }]

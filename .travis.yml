@@ -1,17 +1,34 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
 notifications:
   email: false
+os: linux
+dist: bionic
+matrix:
+  fast_finish: true
+  allow_failures:
+    - node_js: 6
+    - node_js: node
+    - node_js: lts/*
 node_js:
-  - '7'
-  - '6'
-  - '4'
-before_script:
-  - npm prune
-after_success:
-  - npm run semantic-release
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  - 6
+  - 8
+  - 10
+  - 12
+  - lts/*
+  - node
+before_deploy:
+- git config --local user.name "$TRAVIS_AUTHOR_NAME"
+- git config --local user.email "$TRAVIS_AUTHOR_EMAIL"
+deploy:
+  provider: script
+  script: npx semantic-release
+  skip_cleanup: true
+  on:
+    branch: master
+    node: 10
+    os: linux
+sudo: false
+env:
+  global:
+  - secure: ctoJlGv6yNHk2aZlx/mI0kCfwKu/wDqvvV29jP+xYZc4FETUj2qgvNR7BDAGZCQf3bhDREztjgb9WHc63okoCGIgMMzHPlPlQKpKXTvzeyKl80Z3UI6/U/IphPG/zLKIQBDSiDnShNp4DVeqlJ5yaptITdUVqvm3otusegGGFB3NqCFpB4JsAlC47lwgyVcuZ7zGv7KMjPZrukdUd9ZocC8NMhDOo6iE/cx8ZRKnBnws71KsT8bJgnQUdyHLKrbUhL4rvXLMNndhZZlTA6eL2dZXkSI+ppZZZPK6sbOSQB/Ej+GCJSxVWVxktD3CrtqsoKShNyx6zEP3qsHg6ruxBL9REtktW/4Jd6Bju1xtP2dU19q4W7L5Qvs0KIg7m7Hb8mV/gYs8Z0Nh/XL0VkmH8WbfsdGQ/oZF0zRVbVqwt45QFsl2bUrM08FC0LnVtaQw0+64niSKYZQMQSaEwrEA6RB/ygoYDoB/Cl3t6zMfohG521o5OJSzSHDxcpVSW7jYH6JaeVsDJC7TWdXxy/fq/voxFUpOtbpX9usfNCt+gLjQXW6gtlG4h3Yx19K9biJ7SpZLv/kxBx691Ii5pBdEuWHrTjn77Jr9d2lFKekb6mFlhV1tHz4g/cRMugNf78U81IzrAME69+38+yMRMk9NAWucxnpkb+CHzTT3+fuJOYc=
+  - secure: HJ5YLysOuAp0uAVbr1mZ8H9IeU3XBI/JeSQmRZ9MNrF8h9r+RbnGJwItyLj3R94+15MbQFyMxhpKm45GdwJu0b1gcU1pJOdDTtppHvY4gp6nMSxtiIYgH57j2kFbtvG8BA15wZOUQTkNIx6GjoNcPMQjI9PbvuPVJyczbUfojQwvPvRym5sBiUxwH223ZrH6a5Kfc4aQYKpEHGBp1GSEnB0xb7f4FBH35XBJQalD8le09uiUcN8cW9tMejJk/t6Ggrfkbloa0G9B/QavCUb/mfbkrRpWAMXwNp73tgIrQyXcNUblHu4nNEO1d39nn+JZp9oDF9nAxENWhgxFNBGCmPuAdATxiG8evM5y9mxX735oN8/dNEs3CQDLkCnx/kJhBkJ3SBki3QekMysubpsmmZZANV/6BRMN30mKyvG/JhfA+Rp3Ks6zgHpdG8595sc2/ehysLxxgd3/klZVCP6SsW4Fa6IQGdJVFrVuHSKBUIZsjqO5GQ9SLR1NYiJjracByuh0Jv7By/1lmAqXgJHFIcizV7omxgMDAytYDCzp8LwksmJALPFjXn9ezK+RLbk2jAWPIIqurwIzS+ocfv6syuSPlLJJmSBf5yC4Jx7KkU0LwDLOpUKXzXoo7N9dFgouI5KDoGSDJEBCF1sbPeHEsskgyaIVsQhz8dmRKrAWdN4=
